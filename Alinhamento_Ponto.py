@@ -44,9 +44,9 @@ while True:
             op = str(input('Quer continuar \033[32m[S/N]\033[m? ')).strip().upper()
             if op in 'SN':
                 break
-            print('ERRO! Escolha apenas S ou N.')
+            print('\033[31mERRO!\033[m Escolha apenas S ou N.')
         except IndexError:
-            print('ERRO! Escolha apenas S ou N.')
+            print('\033[31mERRO!\033[m Escolha apenas S ou N.')
     if op == 'N':
         print('\033[36mFinalizado com Sucesso!\033[m')
         break
