@@ -13,7 +13,7 @@ while True:
         for cx in range(1,4):
             vl_x = int(input(f'Digite o {cx}º valor de \033[33mX\033[m: '))          
             eixo_x.append(vl_x)
-            lis_geral.append(vl_x)
+            lis_geral.append(vl_x) # Colocando dados na lista geral
         for cy in range(1,4):
             vl_y = int(input(f'Digite o {cy}º valor de \033[35mY\033[m: '))
             eixo_y.append(vl_y)
@@ -34,6 +34,8 @@ while True:
 
         if total == 0:
             print(f'Os pontos \033[34mESTÃO ALINHADOS\033[m, o resultado foi: \033[34m{total}\033[m')
+
+            # Para limpar os dados e não repetir quando mostrar os resultados
             res_m.clear()
             eixo_x.clear()
             eixo_y.clear()
