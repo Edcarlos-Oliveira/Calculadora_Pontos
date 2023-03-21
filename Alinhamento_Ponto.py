@@ -2,6 +2,7 @@ print('*'*6, '\033[32mAlinhamento de Pontos com Regra Sarrus\033[m','*'*6)
 print()
 
 # Listas de X, res_m e Y:
+lis_geral = list()          # Armazenamento dos dados digitados
 eixo_x = list()             # Os os valores de X
 eixo_y = list()             # Recebe os valores de Y
 res_m = list()              # Resultado da multiplicação das diagonais
@@ -12,10 +13,12 @@ while True:
         for cx in range(1,4):
             vl_x = int(input(f'Digite o {cx}º valor de \033[33mX\033[m: '))          
             eixo_x.append(vl_x)
+            lis_geral.append(vl_x)
         for cy in range(1,4):
             vl_y = int(input(f'Digite o {cy}º valor de \033[35mY\033[m: '))
-            eixo_y.append(vl_y) 
-
+            eixo_y.append(vl_y)
+            lis_geral.append(vl_y)
+        
     # Função para Multiplicação e Resultado das diagonais:
     def mult_Result ():
         i = 1
@@ -31,8 +34,14 @@ while True:
 
         if total == 0:
             print(f'Os pontos \033[34mESTÃO ALINHADOS\033[m, o resultado foi: \033[34m{total}\033[m')
+            res_m.clear()
+            eixo_x.clear()
+            eixo_y.clear()
         else:
             print(f'Os pontos \033[31mNÃO ESTÃO ALINHADOS\033[m o resultado foi: \033[31m{total}\033[m')
+            res_m.clear()
+            eixo_x.clear()
+            eixo_y.clear()
     
     # Programa Principal
     x_y ()
@@ -48,5 +57,6 @@ while True:
         except IndexError:
             print('\033[31mERRO!\033[m Escolha apenas S ou N.')
     if op == 'N':
+        print(f'Os números digitados foram: \033[33m{lis_geral}\033[m')
         print('\033[36mFinalizado com Sucesso!\033[m')
         break
